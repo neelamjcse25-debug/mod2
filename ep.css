@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+
+header {
+    background: #222;
+    color: pink;
+    text-align: center;
+    padding: 20px;
+}
+
+
+section {
+    padding: 30px;
+    max-width: 1000px;
+    margin: auto;
+    background: pink;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+
+.filters {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filters label {
+    margin: 0 10px;
+    cursor: pointer;
+    padding: 8px 15px;
+    background: #ddd;
+    border-radius: 20px;
+}
+input[type="radio"] {
+    display: none;
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+#logos:checked ~ .gallery .poster {
+    display: none;
+}
+
+#posters:checked ~ .gallery .logo {
+    display: none;
+}
+
+
+.slider {
+    overflow: hidden;
+    height: 120px;
+}
+
+.slides {
+    display: flex;
+    flex-direction: column;
+    animation: slide 9s infinite;
+}
+
+.slide {
+    text-align: center;
+    padding: 20px;
+}
+
+@keyframes slide {
+    0% {transform: translateY(0);}
+    33% {transform: translateY(-120px);}
+    66% {transform: translateY(-240px);}
+    100% {transform: translateY(0);}
+}
+
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #222;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #222;
+    color: white;
+}
