@@ -27,15 +27,15 @@
 <button onclick="filterSelection('poster')">Posters</button>
         </p>
         <h3 id="all">All Projects</h3>
-        <img src="images/naruto.jpeg" class="logo" width="150">
-<img src="images/anime.jpeg" class="poster" width="150">" alt="Logo Design" width="150">
-        <img src="images/anime.jpeg" alt="Poster Design" width="150">
+        <img src="images/naruto.jpeg" class="logo" width="150" height ="150">
+<img src="images/anime.jpeg" class="poster" width="200" height ="150"> 
+        <img src="images/anime.jpeg" alt="Poster Design" width="150" height ="150">
         <img src="iii.jpeg" alt="Logo Design" width="150">
         <h3 id="logos">Logos</h3>
-        <img src="images/april.jpeg" alt="Logo Design" width="150">
-        <img src="images/demon.jpeg" alt="Logo Design" width="150">
+        <img src="images/april.jpeg" alt="Logo Design" width="150" height ="150">
+        <img src="images/demon.jpeg" alt="Logo Design" width="150" height ="150">
         <h3 id="posters">Posters</h3>
-        <img src="C:\Users\VICTUS\Downloads\iii.jpeg" alt="Poster Design" width="150">
+        <img src="C:\Users\VICTUS\Downloads\iii.jpeg" alt="Poster Design" width="150" height ="150">
     </section>
     <hr>
     <section>
@@ -69,26 +69,7 @@
     <footer>
         <p>by Sapphire Studio</p>
     </footer>
-    <script>
-    function filterSelection(category) {
-        let images = document.querySelectorAll("section img");
-
-        images.forEach(img => {
-            if (category === "all") {
-                img.style.display = "inline-block";
-            } else if (img.classList.contains(category)) {
-                img.style.display = "inline-block";
-            } else {
-                img.style.display = "none";
-            }
-        });
-    }
-
-    // Form submission message
-    document.querySelector("form").addEventListener("submit", function(e) {
-        e.preventDefault();
-        alert("Message sent successfully!");
-    });
-</script>
+    <script src = "scrpit.js"></script>
+    
 </body>
 </html>
