@@ -22,37 +22,32 @@
     <section>
         <h2>My Work</h2>
         <p>
-            <a href="#all">All</a> |
-            <a href="#logos">Logos</a> |
-            <a href="#posters">Posters</a>
+            <button onclick="filterSelection('all')">All</button>
+<button onclick="filterSelection('logo')">Logos</button>
+<button onclick="filterSelection('poster')">Posters</button>
         </p>
         <h3 id="all">All Projects</h3>
-        <img src="C:\Users\VICTUS\Downloads\naruto.jpeg" alt="Logo Design" width="150">
-        <img src="C:\Users\VICTUS\Downloads\anime.jpeg" alt="Poster Design" width="150">
-        <img src="C:\Users\VICTUS\Downloads\iii.jpeg" alt="Logo Design" width="150">
+        <img src="images/naruto.jpeg" class="logo" width="150">
+<img src="images/anime.jpeg" class="poster" width="150">" alt="Logo Design" width="150">
+        <img src="images/anime.jpeg" alt="Poster Design" width="150">
+        <img src="iii.jpeg" alt="Logo Design" width="150">
         <h3 id="logos">Logos</h3>
-        <img src="C:\Users\VICTUS\Downloads\april.jpeg" alt="Logo Design" width="150">
-        <img src="C:\Users\VICTUS\Downloads\demon.jpeg" alt="Logo Design" width="150">
+        <img src="images/april.jpeg" alt="Logo Design" width="150">
+        <img src="images/demon.jpeg" alt="Logo Design" width="150">
         <h3 id="posters">Posters</h3>
         <img src="C:\Users\VICTUS\Downloads\iii.jpeg" alt="Poster Design" width="150">
     </section>
     <hr>
     <section>
-        <h2>Client Testimonials</h2>
-        <blockquote>
-            "Amazing designs! Very creative and professional."
-            <br>— Client A
-        </blockquote>
-        <blockquote>
-            "Delivered work on time. Highly recommended!"
-            <br>— Client B
-        </blockquote>
+    <h2>Client Testimonials</h2>
 
-        <blockquote>
-            "Beautiful logo design. Loved the work!"
-            <br>— Client C
-        </blockquote>
-    </section>
+    <div class="slider">
+        <div class="slide">"Amazing designs! Very creative and professional." <br>— Client A</div>
+        <div class="slide">"Delivered work on time. Highly recommended!" <br>— Client B</div>
+        <div class="slide">"Beautiful logo design. Loved the work!" <br>— Client C</div>
+    </div>
+
+</section>
     <hr>
     <section>
         <h2>Contact Me</h2>
@@ -74,5 +69,26 @@
     <footer>
         <p>by Sapphire Studio</p>
     </footer>
+    <script>
+    function filterSelection(category) {
+        let images = document.querySelectorAll("section img");
+
+        images.forEach(img => {
+            if (category === "all") {
+                img.style.display = "inline-block";
+            } else if (img.classList.contains(category)) {
+                img.style.display = "inline-block";
+            } else {
+                img.style.display = "none";
+            }
+        });
+    }
+
+    // Form submission message
+    document.querySelector("form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("Message sent successfully!");
+    });
+</script>
 </body>
 </html>
