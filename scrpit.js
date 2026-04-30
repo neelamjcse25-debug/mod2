@@ -1,44 +1,37 @@
-
 function filterSelection(category) {
-    let images = document.querySelectorAll(".gallery img");
+    let images = document.querySelectorAll("section img");
 
     images.forEach(img => {
-        if (category === "all" || img.classList.contains(category)) {
+        if (category === "all") {
             img.style.display = "inline-block";
-        } else {
+        } 
+        else if (img.classList.contains(category)) {
+            img.style.display = "inline-block";
+        } 
+        else {
             img.style.display = "none";
         }
     });
 }
 
 
-window.onload = function() {
-    filterSelection('all');
-};
+let current = 0;
+const slides = document.querySelectorAll(".slide");
 
+function showTestimonial() {
+    slides.forEach(slide => slide.style.display = "none");
 
-let buttons = document.querySelectorAll("button");
+    slides[current].style.display = "block";
 
-buttons.forEach(btn => {
-    btn.addEventListener("click", function() {
-        buttons.forEach(b => b.classList.remove("active"));
-        this.classList.add("active");
-    });
-});
-
-let slides = document.querySelectorAll(".slide");
-let index = 0;
-
-function showSlide() {
-    slides.forEach(slide => slide.classList.remove("active"));
-    slides[index].classList.add("active");
-
-    index++;
-    if (index >= slides.length) index = 0;
+    current++;
+    if (current >= slides.length) {
+        current = 0;
+    }
 }
 
-setInterval(showSlide, 3000);
-showSlide();
+
+showTestimonial();
+setInterval(showTestimonial, 3000);
 
 
 document.querySelector("form").addEventListener("submit", function(e) {
